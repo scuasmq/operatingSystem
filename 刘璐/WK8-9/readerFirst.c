@@ -3,13 +3,13 @@
 #include <pthread.h>  
   
   
-#define N_WRITER 3 //写者数目  
-#define N_READER 5 //读者数目  
+#define WRITER_NUM 3 //写者数目  
+#define READER_NUM 5 //读者数目  
 #define W_SLEEP  1 //控制写频率  
 #define R_SLEEP  1 //控制读频率  
   
   
-pthread_t wid[N_WRITER],rid[N_READER];  
+pthread_t wid[WRITER_NUM],rid[READER_NUM];  
 const int MAX_RAND = 1000;//产生的最大随机数  
 pthread_mutex_t writeLock = PTHREAD_MUTEX_INITIALIZER;//同一时间只能一个人写文件,互斥  
 pthread_mutex_t accessReaderCnt = PTHREAD_MUTEX_INITIALIZER;//同一时间只能有一个人访问 readerCnt  
@@ -64,13 +64,13 @@ void * reader (void * in)
 int main()  
 {  
     int i = 0;  
-    for(i = 0; i < N_READER; i++)  
+    for(i = 0; i < READER_NUM; i++)  
     {  
-        pthread_create(&wid[i],NULL,reader,NULL);  
+        pthread_create(&rid[i],NULL,reader,NULL);  
     }
-    for(i = 0; i < N_WRITER; i++)  
+    for(i = 0; i < WRITER_NUM; i++)  
     {  
-        pthread_create(&rid[i],NULL,writer,NULL);  
+        pthread_create(&wid[i],NULL,writer,NULL);  
     }  
     while(1){  
         sleep(10);  

@@ -4,7 +4,7 @@
 
 ## 零、概览
 
-**信号量（semaphore）机制** 
+**信号量（semaphore）机制**  
 
 - 解决并发进程同步的工具
 - P操作表示同步进程发出的检测信号量操作，检测是否能够使用临界资源
@@ -44,7 +44,9 @@
 
 
 
-## 三、创建互斥量函数
+## 三、互斥量
+
+### 1.创建互斥量函数
 
 - 初始化
 
@@ -52,6 +54,8 @@
   pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER
   Eg： pthread_mutex_t mylock;
   ```
+
+- 功能:**函数功能：该函数初始化临界区对象。**
 
 - 函数原型
 
@@ -64,9 +68,21 @@
 
   **函数成功执行后，返回0，互斥锁被初始化为锁住态**
 
+### 2.加锁互斥量函数
 
+- 功能:禁止其他的线程访问对象。
 
-## 四、释放互斥量函数
+- 函数原型
+
+  ```c
+  int pthread_mutex_lock(pthread_mutex_t *mutex);
+  //函数功能：该函数是等待指定临界区对象的所有权。当调用线程被
+  //赋予所有权时，该函数返回。返回值：无。 P
+  ```
+
+- 说明:**当调用线程被赋予所有权时，该函数返回。返回值：无。 P**
+
+### 3.释放互斥量函数
 
 **pthread_mutex_unlock** 
 
@@ -78,11 +94,21 @@
   int pthread_mutex_unlock (pthread_mutex_t *mutex);//Mutex：信号量
   ```
 
-- 说明:**相当于我们的V操作**
+- 说明:**相当于我们的V操作,返回值：无。V**
 
 
 
-## 五、创建信号量函数
+### 4.**互斥量的相关函数**
+
+
+
+
+
+## 四、信号量
+
+[信号量与互斥量的区别](https://blog.csdn.net/qq_34793133/article/details/80087727)
+
+### 1.创建信号量函数
 
 **semget** 
 
@@ -100,7 +126,7 @@
 
 
 
-## 六、释放信号量函数
+### 2.释放信号量函数
 
 **ReleaseSemaphore**
 
@@ -118,7 +144,7 @@
 
 - 说明:**相当于我们的V操作**
 
-## 七、等待同步对象函数
+### 3.等待同步对象函数
 
 **sem_wait**
 
@@ -134,27 +160,6 @@
 
 
 
-## 八、**互斥量的相关函数**
-
-```c
-int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *mutexattr);
-//函数功能：该函数初始化临界区对象。 
-```
 
 
-
-```c
-int pthread_mutex_lock(pthread_mutex_t *mutex);
-//函数功能：该函数是等待指定临界区对象的所有权。当调用线程被
-//赋予所有权时，该函数返回。返回值：无。 P
-```
-
-
-
-```c
-int pthread_mutex_unlock(pthread_mutex_t *mutex);
-//函数功能：该函数释放指定临界区对象的所有权。返回值：无。V
-```
-
-
-
+## 五、管程
