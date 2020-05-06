@@ -25,7 +25,7 @@ waitpid()需要两个头文件<sys/wait.h>和<sys/types.h>，其中types.h定义
 
 ### 程序过程
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427173347025.png" alt="image-20200427173347025" style="zoom:50%;" />
+<img src="./pictures/p15.png" alt="image-20200427173347025" style="zoom:50%;" />
 
 ### more命令
 
@@ -35,7 +35,7 @@ Linux more 命令类似 cat ，不过会以一页一页的形式显示，更方�
 
 int pipe(int pipefd[2])  ,sucess 0,fail -1 set errno
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427091054109.png" alt="image-20200427091054109" style="zoom:40%;" />
+<img src="./pictures/p16.png" alt="image-20200427091054109" style="zoom:40%;" />
 
 这个程序创建了两个子进程，他们用管道进行通信，一个(pid[0])写入ls -l命令的数据，一个(pid[1])通过more命令来写出
 
@@ -67,7 +67,7 @@ int main(void)
 
 执行后，会发现printf()将内容输出到了文件test.txt里面，而不是输出到了显示器。本来STDOUT_FILENO是作为标准输出和显示器绑定的，现在调用函数dup2，会先解除它们之间的映射关系，然后让STEOUT_FILENO与文件描述符fd指向的文件表项建立映射关系。
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427093806628.png" alt="image-20200427093806628" style="zoom:50%;" />
+<img src="./pictures/p17.png" alt="image-20200427093806628" style="zoom:50%;" />
 
 `int dup(int oldfd);`
 
@@ -188,11 +188,11 @@ void (*signal(int sig, void (*func)(int)))(int)
 
 通过查看`signal.h`可以发现各属性
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427104231365.png" alt="image-20200427104231365" style="zoom:50%;" />
+<img src="./pictures/p18.png" alt="image-20200427104231365" style="zoom:50%;" />
 
 ### 为什么程序里有sa_sigaction呢
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427104349724.png" alt="image-20200427104349724" style="zoom:50%;" />
+<img src="./pictures/p19.png" alt="image-20200427104349724" style="zoom:50%;" />
 
 
 
@@ -235,7 +235,7 @@ signum参数指出要捕获的信号类型，act参数指定新的信号处理�
 
 通过查看`signal.h`我们可以可以看到`SIGCHLD`的作用是传递给父进程子进程结束或者退出的信息。
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427103222325.png" alt="image-20200427103222325" style="zoom:50%;" />
+<img src="./pictures/p20.png" alt="image-20200427103222325" style="zoom:50%;" />
 
 ### WNOHANG
 
@@ -255,7 +255,7 @@ signum参数指出要捕获的信号类型，act参数指定新的信号处理�
 
 在登录shell时，用户可能会使用管道，让多个进程互相配合完成一项工作，这一组进程属于同一个进程组。 
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427120109648.png" alt="image-20200427120109648" style="zoom:50%;" />
+<img src="./pictures/p21.png" alt="image-20200427120109648" style="zoom:50%;" />
 
 `ps aux`查看所有进程, `ps -ejH`查看进程组
 
@@ -322,7 +322,7 @@ vi在/usr/bin中，不能只有/bin
 
 ​                           pid             ppid		pgid			sid
 
-![image-20200427180215258](/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427180215258.png)
+![image-20200427180215258](./pictures/p22.png)
 
-![image-20200427180039493](/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200427180039493.png)
+![image-20200427180039493](./pictures/p23.png)
 

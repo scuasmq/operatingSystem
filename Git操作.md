@@ -28,7 +28,7 @@
 
 ### (1)设置user.name和email(GitHub上每次commit可以看到)，比如
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200401210008463.png" alt="image-20200401210008463" style="zoom:50%;" />
+<img src="./pictures/p24.png" alt="image-20200401210008463" style="zoom:50%;" />
 
 ```bash
 $  git config --global user.name "输入你的用户名"
@@ -60,7 +60,7 @@ sUdLr6LG26QIBR6fwl9Z9YPyfqXtazoARbDggGO8wCI36a7cPG+7A3INfGfZHeU/JhNJfAc= smqsGit
 
 在创建时会询问保存路径和密码，按回车默认在~/.ssh下和无密码，否则在push时会要求密码
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200401211522160.png" alt="image-20200401211522160" style="zoom:50%;" />
+<img src="./pictures/p25.png" alt="image-20200401211522160" style="zoom:50%;" />
 
 ​		清除密码，会提示选择修改的密钥，回车默认是~/.ssh/id_rsa
 
@@ -74,7 +74,7 @@ $ ssh-keygen -p
 $ pbcopy < ~/.ssh/id_rsa.pub #添加到剪贴板中
 ```
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200401221343213.png" alt="image-20200401221343213" style="zoom:45%;" />
+<img src="./pictures/p26.png" alt="image-20200401221343213" style="zoom:45%;" />
 
 验证是否成功：
 
@@ -224,7 +224,7 @@ $ git clone ssh
 
 #### 分支的创建、切换与合并
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200402165527407.png" alt="image-20200402165527407" style="zoom:50%;" />
+<img src="./pictures/p27.png" alt="image-20200402165527407" style="zoom:50%;" />
 
 ```bash
 #创建并切换分支
@@ -260,7 +260,7 @@ $ git branch -d dev
 
 #### 解决冲突
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200402171555326.png" alt="image-20200402171555326" style="zoom:50%;" />
+<img src="./pictures/p28.png" alt="image-20200402171555326" style="zoom:50%;" />
 
 ```bash
 #比如在feature1和master结尾处都加一不同的句子，然后add、commit，在merge时会出现冲突
@@ -299,7 +299,7 @@ $ git branch -d feature1
 
  
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200402172849039.png" alt="image-20200402172849039" style="zoom:75%;" />
+<img src="./pictures/p29.png" alt="image-20200402172849039" style="zoom:75%;" />
 
 #### 分支管理策略
 
@@ -314,7 +314,7 @@ $ git merge --no-ff -m "merge with no-ff" dev
 ```
 上一小节的dev是没有出现在分支里的，这次结果如下图所示：
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200402173509603.png" alt="image-20200402173509603" style="zoom:50%;" />
+<img src="./pictures/p30.png" alt="image-20200402173509603" style="zoom:50%;" />
 
 
 

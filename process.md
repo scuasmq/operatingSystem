@@ -4,15 +4,15 @@
 
 ## 零 - 概览
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001014109.png" alt="image-20200502001014109" style="zoom:50%;" />
+<img src="./pictures/p6.png" alt="image-20200502001014109" style="zoom:50%;" />
 
 ## 一 - 进程属性
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001111931.png" alt="image-20200502001111931" style="zoom:50%;" />
+<img src="./pictures/p7.png" alt="image-20200502001111931" style="zoom:50%;" />
 
 ## 二 - 进程创建
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001142208.png" alt="image-20200502001142208" style="zoom:50%;" />
+<img src="./pictures/p8.png" alt="image-20200502001142208" style="zoom:50%;" />
 
 - 系统加电启动后，系统中只有一个进程——<font color = #ff0000>初始化进程</font>>，又称<font color = #ff0000>init进程</font>>，是所有进程的祖先进程，它的进程<font color = #ff0000>pid=1</font>
 - 在linux中除了init进程是由系统启动时创建的外，其他所有进程都是由当前进程使用系统调用<font color = #ff0000>fork()</font>>创建的。
@@ -22,7 +22,7 @@
 
 - 同时运行grep程序，在不同文件中查找不同的字符串
 
-  <img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001507724.png" alt="image-20200502001507724" style="zoom:50%;" />
+  <img src="./pictures/p9.png" alt="image-20200502001507724" style="zoom:50%;" />
 
 ## 四 - fork()
 
@@ -37,7 +37,7 @@ pid_t fork( );
 - 新进程几乎与原进程相同，执行代码也相同
 - 但有自己的数据空间，环境，文件描述符等
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001730156.png" alt="image-20200502001730156" style="zoom:50%;" />
+<img src="./pictures/p10.png" alt="image-20200502001730156" style="zoom:50%;" />
 
 - fork调用的一个奇妙之处就是它仅仅被调用一次，却能够返回两次，它可能有三种不同的返回值：
 
@@ -47,11 +47,11 @@ pid_t fork( );
 
   - 出现错误:返回-1
 
-    <img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001805096.png" alt="image-20200502001805096" style="zoom:50%;" />
+    <img src="./pictures/p11.png" alt="image-20200502001805096" style="zoom:50%;" />
 
-  <img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502001902767.png" alt="image-20200502001902767" style="zoom:50%;" />
+  <img src="./pictures/p12.png" alt="image-20200502001902767" style="zoom:50%;" />
 
-  - 这样的程序会创建七个子进程。<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200502002008735.png" alt="image-20200502002008735" style="zoom: 45%;" />
+  - 这样的程序会创建七个子进程。<img src="./pictures/p13.png" alt="image-20200502002008735" style="zoom: 45%;" />
 
   
 

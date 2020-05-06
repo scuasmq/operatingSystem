@@ -4,7 +4,7 @@
 
 ## 零 - *概览*
 
-<img src="/Users/asmqsaccount/Library/Application Support/typora-user-images/image-20200501213838562.png" alt="image-20200501213838562" style="zoom:75%;" />
+<img src="/Users/asmqsaccount/Documents/operatingSystem/myOS/Mybook/pictures/p14.png" alt="image-20200501213838562" style="zoom:75%;" />
 
 <font color = #e3c6d1>以下内容都是在linux下讨论</font>
 
