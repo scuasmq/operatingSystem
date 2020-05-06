@@ -14,15 +14,15 @@
 
 ### 1 - **生产者-消费者问题**
 
-[producer–consumer problem](./producer–consumer problem.md)
+[producer–consumer problem](./producer–consumer%20problem.md)
 
 ### 2 - **读者-写者问题**
 
-[readers–writers problem](./readers–writers problem.md)
+[readers–writers problem](./readers–writers%20problem.md)
 
 ### 3 - **哲学家进餐问题**
 
-[dining-philosopher problem](./dining-philosopher problem.md)
+[dining-philosopher problem](./dining-philosopher%20problem.md)
 
 ## 二、同步对象
 
